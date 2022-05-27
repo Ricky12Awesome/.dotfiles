@@ -1,0 +1,28 @@
+#!/bin/env sh
+
+# IMPORTANT: script must be ran using source in your zshrc and bashrc: `source $HOME/.shellrc`
+
+# This script is made to be compatible with zsh and bash
+# This stores enviroment variables and aliases shared between shells
+
+
+export SHELL="$(
+  (test -n "$ZSH_VERSION" && echo "zsh") ||
+  (test -n "$BASH_VERSION" && echo "bash") ||
+  echo ""
+)"
+
+source <(starship init $SHELL --print-full-init)
+
+eval $(keychain --eval --quiet)
+
+# User configuration
+
+# export MANPATH="/usr/local/man:$MANPATH"
+
+export EDITOR="nvim"
+export ARCHFLAGS="-arch x86_64"
+
+alias cat="bat"
+alias ls="exa"
+alias lls="exa -al"

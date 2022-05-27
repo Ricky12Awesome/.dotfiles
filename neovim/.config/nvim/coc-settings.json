@@ -1,0 +1,19 @@
+{
+  "coc.preferences.colorSupport": true,
+  "workspace.workspaceFolderCheckCwd": true,
+  
+  "rust-analyzer.server.path": "/bin/rust-analyzer",
+  "rust-analyzer.enable": true,
+  "rust-analyzer.diagnostics.enable": true,
+  "rust-analyzer.procMacro.enable": true,
+  "rust-analyzer.cargo.runBuildScripts": true,
+  
+  "explorer.icon.enableNerdfont": true,
+  "explorer.file.showHiddenFiles": true,
+  "explorer.width": 30,
+
+  "kotlin.indexing.enabled": true,
+  "kotlin.languageServer.enabled": true,
+  "kotlin.languageServer.path": "/usr/bin/kotlin-language-server"
+
+}
