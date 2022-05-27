@@ -14,3 +14,5 @@ git submodule update --init
 ```
 
 if you want to revert back to your old configs run `./uninstall.sh`
+
+Currently the install/uninstall scripts are work in progress, so you would have to manually do it using stow
