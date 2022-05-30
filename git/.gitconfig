@@ -6,3 +6,5 @@
 	gpgsign = true
 [core]
 	pager = bat --plain
+[init]
+	defaultBranch = main
