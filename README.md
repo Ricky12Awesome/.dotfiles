@@ -4,15 +4,25 @@ This repo contains my dotfiles that I use for linux
 
 This project uses [GNU Stow](https://www.gnu.org/software/stow/) to manage dotfiles
 
-## Install
+## Usage
 
 ```sh
 git clone https://github.com/Ricky12Awesome/.dotfiles
 cd .dotfiles
-git submodule update --init
-./install.sh
 ```
 
-if you want to revert back to your old configs run `./uninstall.sh`
+You must install these yourself, not a complete list, 
+since I don't know what is exactly required for each package, 
+but will update it when needed
 
-Currently the install/uninstall scripts are work in progress, so you would have to manually do it using stow
+zsh
+---
+- [oh-my-zsh](https://ohmyz.sh/)
+- [zsh-completions](https://github.com/zsh-users/zsh-completions)
+- [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
+
+neovim
+------
+* [dein.vim](https://github.com/Shougo/dein.vim)
+
+
