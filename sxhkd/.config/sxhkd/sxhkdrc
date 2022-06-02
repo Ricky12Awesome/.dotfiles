@@ -22,8 +22,12 @@ super + Escape
 super + b
 	$HOME/.config/polybar/launch.sh
 
+# Launch screenshot tool (flameshot breaks imwheel, so I just restart it)
+# simply running imwheel -kb "45" doesn't work, it needs to popup a windows and then run
+# since for whatever reason, if it is ran when a window it effects it doesn't work
+# but at least it's instant and you don't notice it
 super + s
-	flameshot gui
+	flameshot gui && bspc rule -a "Alacritty" focus=on follow=on state=floating --one-shot && alacritty -e bash -c "imwheel -kb '45'"
 	 #scrot -s ~/Pictures/ss.png
 
 # Audio controls
@@ -125,17 +129,17 @@ super + {_,shift + }{1-9,0}
 # # preselect
 # #
 
-# # preselect the direction
-# super + ctrl + {h,j,k,l}
-# 	bspc node -p {west,south,north,east}
+# preselect the direction
+super + ctrl + {h,j,k,l}
+	bspc node -p {west,south,north,east}
 
 # # preselect the ratio
 # super + ctrl + {1-9}
 # 	bspc node -o 0.{1-9}
 
-# # cancel the preselection for the focused node
-# super + ctrl + space
-# 	bspc node -p cancel
+# cancel the preselection for the focused node
+super + ctrl + space
+	bspc node -p cancel
 
 # # cancel the preselection for the focused desktop
 # super + ctrl + shift + space

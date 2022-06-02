@@ -11,8 +11,8 @@ call dein#add('/home/ricky/.cache/dein/repos/github.com/Shougo/dein.vim')
 
 " Plugins
 call dein#add('neoclide/coc.nvim', { 'merged': 0, 'rev': 'release' })
-call dein#add('ryanoasis/vim-devicons')
-" call dein#add('preservim/nerdtree')
+" call dein#add('ryanoasis/vim-devicons')
+call dein#add('preservim/nerdtree')
 " call dein#add('airblade/vim-rooter')
 call dein#add('preservim/nerdcommenter')
 call dein#add('itchyny/lightline.vim')
