@@ -37,7 +37,15 @@ test -n "$SHELL" && source <(starship init $SHELL --print-full-init) || echo "zs
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
+# General
 alias vim="nvim"
 alias cat="bat"
 alias ls="exa"
 alias lls="exa -al"
+
+# Git
+alias gita="git add -A"
+alias gitc="git commit -m $1"
+alias gitp="git push"
+alias gitac="git add -A && git commit -m $1"
+alias gitacp="git add -A && git commit -m $1 && git push"
