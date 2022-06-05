@@ -42,6 +42,7 @@ alias vim="nvim"
 alias cat="bat"
 alias ls="exa"
 alias lls="exa -al"
+alias code="code-insiders"
 
 # Git
 alias gita="git add -A"
