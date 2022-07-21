@@ -287,6 +287,8 @@ let g:Hexokinase_highlighters = ['backgroundfull']
 " hi default link CocSem_operator Operator
 " hi default link CocSem_builtinType Keyword
 
+" Other
+
 set notimeout nottimeout
 set number
 set mouse=a

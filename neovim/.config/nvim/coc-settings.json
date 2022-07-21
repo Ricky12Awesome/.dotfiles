@@ -1,19 +1,25 @@
 {
-  "coc.preferences.colorSupport": true,
   "workspace.workspaceFolderCheckCwd": true,
-  
-  "rust-analyzer.server.path": "/bin/rust-analyzer",
+  "rust-analyzer.semanticHighlighting.strings.enable": true,
   "rust-analyzer.enable": true,
   "rust-analyzer.diagnostics.enable": true,
   "rust-analyzer.procMacro.enable": true,
-  "rust-analyzer.cargo.runBuildScripts": true,
-  
   "explorer.icon.enableNerdfont": true,
   "explorer.file.showHiddenFiles": true,
   "explorer.width": 30,
-
-  "kotlin.indexing.enabled": true,
-  "kotlin.languageServer.enabled": true,
-  "kotlin.languageServer.path": "/usr/bin/kotlin-language-server"
-
+  "prettier.tabWidth": 2,
+  "languageserver": {
+    "haskell": {
+      "command": "haskell-language-server-wrapper",
+      "args": ["--lsp"],
+      "rootPatterns": [
+        "*.cabal",
+        "stack.yaml",
+        "cabal.project",
+        "package.yaml",
+        "hie.yaml"
+      ],
+      "filetypes": ["haskell", "lhaskell"]
+    }
+  }
 }
