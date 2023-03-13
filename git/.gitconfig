@@ -6,5 +6,8 @@
 	gpgsign = true
 [core]
 	pager = bat --plain
+	autocrlf = input
 [init]
 	defaultBranch = main
+[credential]
+	provider = generic

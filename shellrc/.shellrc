@@ -16,9 +16,15 @@ export EDITOR="nvim"
 
 # Go bin path, should probably but this in a better place
 export PATH="$PATH:$HOME/go/bin"
+export CARGO_TARGET_DIR="$HOME/.cargo/target"
 
 # Setup ssh-agent, keychain allows using the same ssh-agent accross different process (like multiple terminals)
 eval $(keychain --eval --quiet)
+
+# Hotspot throttle bypass, under "misc" in dotfiles repo
+if [[ -f $HOME/pda-hotspot-proxy.sh ]]; then
+  source $HOME/pda-hotspot-proxy.sh
+fi
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
@@ -33,14 +39,16 @@ test -n "$SHELL" && source <(starship init $SHELL --print-full-init) || echo "zs
 
 # General
 alias vim="nvim"
+
+# Test new nvim config
+alias nvim2="XDG_CONFIG_HOME=\"$HOME/.dotfiles/neovim-v2/.config\" nvim"
+
 alias cat="bat"
 alias ls="exa"
 alias lls="exa -al"
 #alias code="code-insiders"
 
 alias marktext="flatpak run com.github.marktext.marktext $@"
-alias neofetch="neofetch --ascii_distro fedora" # Using Nobara which now uses custom branding
-
 
 # Git
 alias gita="git add -A"

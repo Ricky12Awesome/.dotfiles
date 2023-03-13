@@ -22,6 +22,8 @@ call dein#add('lambdalisue/suda.vim')
 " call dein#add('arzg/vim-rust-syntax-ext')
 " call dein#add('rrethy/vim-hexokinase', { 'build': 'make hexokinase' })
 
+call dein#add('rafcamlet/coc-nvim-lua')
+
 " Themes
 call dein#add('dracula/vim')
 " call dein#local('~/dev/vim')
