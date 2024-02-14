@@ -10,7 +10,7 @@ for dest in $files; do
     continue
   fi
 
-  if cmp -s $source $dest; then
+  if /usr/bin/cmp -s $source $dest; then
     continue 
   fi
 
