@@ -2,7 +2,7 @@
 {
     "layer": "top", // Waybar at top layer
     // "position": "bottom", // Waybar position (top|bottom|left|right)
-    // "height": 28, // Waybar height (to be removed for auto height)
+    "height": 28, // Waybar height (to be removed for auto height)
     // "width": 1280, // Waybar width
     "spacing": 18, // Gaps between modules (4px)
     // Choose the order of the modules
@@ -14,12 +14,11 @@
         "disable-scroll": true,
         "all-outputs": false,
         "warp-on-scroll": false,
-        "format": "{name}{icon}",
+        "format": "{name}",
         "format-icons": {
-            "urgent": " ",
-            "focused": " ",
+            // "urgent": " ",
+            // "focused": " ",
             // "default": " "
-            "default": ""
         }
     },
     "hyprland/mode": {

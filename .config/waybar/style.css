@@ -22,24 +22,38 @@ button {
 }
 
 #workspaces button {
-    padding: 0 5px;
+    padding: 0 13.5px;
     background-color: transparent;
     color: #ffffff;
 }
 
 #workspaces button:hover {
-    background: rgba(0, 0, 0, 0.2);
-    box-shadow: inset 0 -3px #ffffff;
+    background-color: rgba(0xe2, 0x68, 0xf7, 0.66); 
+    /* background: rgba(0, 0, 0, 1.0); */
+    /* box-shadow: inset 0 -3px #ffffff; */
 }
 
 #workspaces button.active {
     /* background-color: #e268f7; */
-    background-color: rgba(0xe2, 0x68, 0xf7, 0.66);
-    box-shadow: inset 0 -3px rgba(0xe2, 0x68, 0xf7, 1.0);
+    background-color: rgba(0xe2, 0x68, 0xf7, 0.50);
+    /* box-shadow: inset 0 -3px rgba(0xe2, 0x68, 0xf7, 1.0); */
 }
 
 #workspaces button.urgent {
-    background-color: #eb4d4b;
+    /* background-color: #eb4d4b; */
+    animation: blink-animation 0.66s infinite;
+    animation-direction: alternate;
+  /* background-color: rgba(0xe2, 0x68, 0xf7, 1.0); */
+}
+
+@keyframes blink-animation {  
+  0% {
+    background-color: rgba(0xe2, 0x68, 0xf7, 0.33);
+  }
+
+  100% {
+    background-color: rgba(0xe2, 0x68, 0xf7, 1.0);
+  }
 }
 
 #clock,
