@@ -87,6 +87,11 @@ require("lazy").setup({
       { "L3MON4D3/LuaSnip" },
     }
   },
+	{
+		"theRealCarneiro/hyprland-vim-syntax",
+		dependencies = { "nvim-treesitter/nvim-treesitter" },
+		ft = "hypr",
+	},
   {
     "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate",
