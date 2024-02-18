@@ -7,7 +7,7 @@ if ! [[ -e $file ]]; then
 fi
 
 function toggle_monitor() {
-  if [[ $toggle = "true" ]]; then
+  if [[ $toggle = "false" ]]; then
     line1="keyword monitor HDMI-A-1, disabled"
     line2="keyword monitor DP-1, 2560x1440@170, 0x0, 1, vrr, 2"
 
@@ -27,10 +27,10 @@ if [[ "-s" =~ ^($@)$ ]]; then
 fi
 
 if [[ $(cat $file) = "true" ]]; then
-  toggle="true"
+  toggle="false"
   echo "false" > $file
 else
-  toggle="false"
+  toggle="true"
   echo "true" > $file
 fi
 
