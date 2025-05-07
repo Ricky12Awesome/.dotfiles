@@ -1,0 +1,33 @@
+# https://alacritty.org/config-alacritty.html
+
+[general]
+live_config_reload = true
+
+[terminal]
+shell = "fish"
+
+[window]
+opacity=0.667
+dynamic_padding = true
+blur=true
+
+[font]
+size=16
+
+[font.bold]
+family = "JetBrains Mono Nerd Font"
+
+[font.bold_italic]
+family = "JetBrains Mono Nerd Font"
+
+[font.italic]
+family = "JetBrains Mono Nerd Font"
+
+[font.normal]
+family = "JetBrains Mono Nerd Font"
+
+[cursor]
+style = "Underline"
+
+[colors.primary]
+background="#000000"

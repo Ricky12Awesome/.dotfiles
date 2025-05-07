@@ -1,0 +1,15 @@
+(defwindow blackscreen[id]
+  :geometry (geometry
+    ; Make sure to cover full screen and bars
+    :x "-200%"
+    :y "-200%"
+    :width "200%"
+    :height "200%"
+  :anchor "center")
+  :stacking "overlay"
+  :exclusive true
+  (button
+    :style "background: #000000; color: #000000; border: none;"
+    :onclick "eww close ${id}"
+  )
+)
