@@ -6,6 +6,7 @@
     // "width": 1280, // Waybar width
     "spacing": 18, // Gaps between modules (4px)
     // Choose the order of the modules
+    "mode": "dock",
     "modules-left": ["hyprland/workspaces", "hyprland/mode", "hyprland/scratchpad", "custom/media"],
     "modules-center": ["hyprland/window"],
     "modules-right": ["pulseaudio", "cpu", "memory", "temperature", "clock", "tray"],
