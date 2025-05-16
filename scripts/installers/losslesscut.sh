@@ -15,8 +15,7 @@ mkdir -p "$HOME/.local/appimages"
 mkdir -p "$HOME/.local/share/applications"
 
 # https://github.com/mifi/lossless-cut?tab=readme-ov-file#download
-wget "https://github.com/mifi/lossless-cut/releases/latest/download/$name" -P /tmp
-mv -f "/tmp/$name"  "$HOME/.local/appimages/$name"
+wget "https://github.com/mifi/lossless-cut/releases/latest/download/$name" -O "$HOME/.local/appimages/$name"
 chmod +x "$HOME/.local/appimages/$name"
 
 desktop=$(cat <<EOF
