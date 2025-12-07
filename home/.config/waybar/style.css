@@ -1,59 +1,99 @@
 * {
-    /* `otf-font-awesome` is required to be installed for icons */
-    font-family: Roboto, "Font Awesome 6 Free";
-    font-size: 18px;
+  /* `otf-font-awesome` is required to be installed for icons */
+  font-family: Roboto, "Font Awesome 6 Free";
+  font-size: 20px;
 }
 
 window#waybar {
-    /* background-color: transparent; */
-    background-color: rgba(0, 0, 0, 0.667);
-    /* border-bottom: 3px solid rgba(100, 114, 125, 0.5); */
-    color: #ffffff;
-    transition-property: background-color;
-    transition-duration: .5s;
+  /* background-color: transparent; */
+  background-color: rgba(0, 0, 0, 0.667);
+  /*border-bottom: 3px solid rgba(100, 114, 125, 0.5);*/
+  color: #ffffff;
+  transition-property: background-color;
+  transition-duration: 0.5s;
 }
 
 button {
-    /* Use box-shadow instead of border so the text isn't offset */
-    box-shadow: inset 0 -3px transparent;
-    /* Avoid rounded borders under each button name */
-    border: none;
-    border-radius: 0;
+  /* Use box-shadow instead of border so the text isn't offset */
+  box-shadow: inset 0 -3px transparent;
+  /* Avoid rounded borders under each button name */
+  border: none;
+  border-radius: 0;
 }
 
 #workspaces button {
-    padding: 0 13.5px;
-    background-color: transparent;
-    color: #ffffff;
-}
-
-#workspaces button:hover {
-    background-color: alpha(#8f00a6, 0.8);
-    /* background: rgba(0, 0, 0, 1.0); */
-    /* box-shadow: inset 0 -3px #ffffff; */
+  padding: 0 16px;
+  background-color: transparent;
+  color: #ffffff;
 }
 
 #workspaces button.active {
-    /* background-color: #e268f7; */
-    background-color: alpha(#7300a6, 0.8);
-    /* box-shadow: inset 0 -3px rgba(0xe2, 0x68, 0xf7, 1.0); */
+  /* background-color: #e268f7; */
+  background-color: alpha(#313244, 0.8);
+  color: #cba6f7;
+  /*background-color: alpha(#7300a6, 0.8);*/
+  /* box-shadow: inset 0 -3px rgba(0xe2, 0x68, 0xf7, 1.0); */
+  box-shadow: inset 0 2px #cba6f7;
+}
+
+#workspaces button:hover {
+  background-color: alpha(#45475a, 0.8);
+  color: #f5c2e7;
+  /*background-color: alpha(#8f00a6, 0.8);*/
+  /* background: rgba(0, 0, 0, 1.0); */
+  box-shadow: inset 0 2px #f5c2e7;
 }
 
 #workspaces button.urgent {
-    /* background-color: #eb4d4b; */
-    animation: blink-animation 0.66s infinite;
-    animation-direction: alternate;
+  /* background-color: #eb4d4b; */
+  animation: blink-animation 0.5s infinite;
+  animation-direction: alternate;
   /* background-color: rgba(0xe2, 0x68, 0xf7, 1.0); */
 }
 
-@keyframes blink-animation {  
+@keyframes blink-animation {
   0% {
-    background-color: rgba(0xe2, 0x68, 0xf7, 0.33);
+    /*background-color: rgba(0xe2, 0x68, 0xf7, 0.33);*/
+    background-color: alpha(#313244, 1);
+    color: alpha(#cba6f7, 1);
+    box-shadow: inset 0 2px alpha(#cba6f7, 1);
   }
 
   100% {
-    background-color: rgba(0xe2, 0x68, 0xf7, 1.0);
+    /*background-color: rgba(0xe2, 0x68, 0xf7, 1);*/
+    background-color: alpha(#585b70, 1);
+    color: alpha(#f38ba8, 1);
+    box-shadow: inset 0 2px alpha(#f38ba8, 1);
   }
+}
+
+#clock,
+#pulseaudio,
+#wireplumber {
+  color: #cba6f7;
+}
+
+#cpu,
+#memory,
+#temperature {
+  color: #94e2d5;
+}
+#cpu.low,
+#memory.low {
+  color: #a6e3a1;
+}
+#cpu.med,
+#memory.med {
+  color: #f9e2af;
+}
+#cpu.high,
+#memory.high {
+  color: #fab387;
+}
+#cpu.vhigh,
+#memory.vhigh,
+#temperature.critical {
+  color: #f38ba8;
 }
 
 #clock,
@@ -67,47 +107,46 @@ button {
 #custom-media,
 #tray,
 #scratchpad,
-
 #window,
 #workspaces {
-    margin: 0 4px;
+  margin: 0 4px;
 }
 
 .modules-right {
-    margin-right: 13.5px;
+  margin-right: 13.5px;
 }
 
 .modules-right > widget {
-    border: none;
+  border: none;
 }
 
 /* If workspaces is the leftmost module, omit left margin */
 .modules-left > widget:first-child > #workspaces {
-    margin-left: 0;
+  margin-left: 0;
 }
 
 /* If workspaces is the rightmost module, omit right margin */
 .modules-right > widget:last-child > #workspaces {
-    margin-right: 0;
+  margin-right: 0;
 }
 
 label:focus {
-    background-color: #000000;
+  background-color: #000000;
 }
 
 #tray > .passive {
-    -gtk-icon-effect: dim;
+  -gtk-icon-effect: dim;
 }
 
 #tray > .needs-attention {
-    -gtk-icon-effect: highlight;
-    background-color: #eb4d4b;
+  -gtk-icon-effect: highlight;
+  background-color: #f38ba8;
 }
 
 #scratchpad {
-    background: rgba(0, 0, 0, 0.2);
+  background: rgba(0, 0, 0, 0.2);
 }
 
 #scratchpad.empty {
-	  background-color: transparent;
+  background-color: transparent;
 }

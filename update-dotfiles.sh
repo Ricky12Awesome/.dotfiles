@@ -12,13 +12,13 @@ for dest in $files; do
   fi
 
   if /usr/bin/cmp -s $source $dest; then
-    continue 
+    continue
   fi
 
   if [[ "-f" =~ ^($@)$ ]]; then
-    /usr/bin/cp -f $source $dest 
-  else 
-    /usr/bin/cp -i $source $dest
+    /usr/bin/cp -f $source $dest
+  else
+    /usr/bin/cp -i $source $(pwd)/$dest
   fi
 
 done

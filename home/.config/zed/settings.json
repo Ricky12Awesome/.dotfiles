@@ -1,0 +1,74 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  "prettier": {
+    "allowed": false
+  },
+  "terminal": {
+    "dock": "right"
+  },
+  "file_types": {
+    "ini": ["*.desktop"]
+  },
+  "formatter": [
+    {
+      "external": {
+        "command": "/home/ricky/.bun/bin/prettier",
+        "arguments": ["--stdin-filepath", "{buffer_path}"]
+      }
+    }
+  ],
+  "lsp": {
+    "rust-analyzer": {
+      "initialization_options": {
+        "cargo": {
+          "features": "all"
+        }
+      }
+    }
+  },
+  "languages": {
+    "Shell Script": {
+      "format_on_save": "on",
+      "formatter": {
+        "external": {
+          "command": "shfmt",
+          // Change `--indent 2` to match your preferred tab_size
+          "arguments": ["--filename", "{buffer_path}", "--indent", "2"]
+        }
+      }
+    },
+    "TOML": {
+      "formatter": "language_server"
+    },
+    "ini": {
+      "formatter": "language_server"
+    },
+    "Rust": {
+      "tab_size": 4,
+      "formatter": "language_server",
+      "inlay_hints": {
+        "enabled": true
+      }
+    }
+  },
+  "icon_theme": "Material Icon Theme",
+  "tab_size": 2,
+  "base_keymap": "JetBrains",
+  "inlay_hints": {
+    "enabled": true
+  },
+  "ui_font_size": 22.0,
+  "buffer_font_size": 22.0,
+  "theme": {
+    "mode": "system",
+    "light": "One Light",
+    "dark": "Catppuccin Espresso (Blur)"
+  }
+}
