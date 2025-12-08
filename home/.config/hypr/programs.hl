@@ -1,0 +1,10 @@
+###################
+### MY PROGRAMS ###
+###################
+
+# Set programs that you use
+$terminal = alacritty
+$fileManager = dolphin
+# $menu = wofi --show drun
+# https://github.com/Ulauncher/Ulauncher
+$menu = ulauncher-toggle

@@ -1,0 +1,149 @@
+#####################
+### LOOK AND FEEL ###
+#####################
+
+# Refer to https://wiki.hyprland.org/Configuring/Variables/
+
+# https://wiki.hyprland.org/Configuring/Variables/#general
+general {
+    gaps_in = 2
+    gaps_out = 4
+
+    border_size = 4
+
+    # Colors
+
+    # https://wiki.hyprland.org/Configuring/Variables/#variable-types for info about colors
+    # col.active_border = rgba(cba6f7ff) rgba(f5c2e7ff) 45deg
+    col.active_border = rgba(cba6f7ff)
+    col.inactive_border = rgba(11111bff)
+    # col.active_border = rgb(7300a6) rgb(8f00a6) 0deg
+    # col.inactive_border = rgba(595959aa)
+
+    # Set to true enable resizing windows by clicking and dragging on borders and gaps
+    resize_on_border = false
+
+    # Please see https://wiki.hyprland.org/Configuring/Tearing/ before you turn this on
+    allow_tearing = true
+
+    layout = dwindle
+}
+
+# https://wiki.hyprland.org/Configuring/Variables/#decoration
+decoration {
+   rounding = 6
+   rounding_power = 3
+
+   # Change transparency of focused and unfocused windows
+   active_opacity = 1.0
+   inactive_opacity = 1.0
+
+   shadow {
+       enabled = false
+       range = 4
+       render_power = 3
+       color = rgba(1a1a1aee)
+   }
+
+   # https://wiki.hyprland.org/Configuring/Variables/#blur
+   blur {
+       enabled = false
+       size = 3
+       passes = 1
+
+       vibrancy = 0.1696
+   }
+}
+
+# https://wiki.hyprland.org/Configuring/Variables/#animations
+animations {
+    enabled = yes, please :)
+
+    # Default animations, see https://wiki.hyprland.org/Configuring/Animations/ for more
+
+    bezier = easeOutQuint,0.23,1,0.32,1
+    bezier = easeInOutCubic,0.65,0.05,0.36,1
+    bezier = linear,0,0,1,1
+    bezier = almostLinear,0.5,0.5,0.75,1.0
+    bezier = quick,0.15,0,0.1,1
+
+    animation = global, 1, 10, default
+
+    animation = border, 1, 1, easeOutQuint
+    #animation = borderangle, 1, 30, linear, loop
+
+    animation = windows, 1, 1, easeOutQuint
+    animation = windowsIn, 1, 1, easeOutQuint, popin 87%
+    animation = windowsOut, 1, 1, linear, popin 87%
+
+    animation = fadeIn, 1, 1, almostLinear
+    animation = fadeOut, 1, 1, almostLinear
+    animation = fade, 1, 1, quick
+
+    animation = layers, 1, 1, easeOutQuint
+    animation = layersIn, 1, 1, easeOutQuint, fade
+    animation = layersOut, 1, 1, linear, fade
+    animation = fadeLayersIn, 1, 1, almostLinear
+    animation = fadeLayersOut, 1, 1, almostLinear
+
+    animation = workspaces, 1, 1, almostLinear, fade
+    animation = workspacesIn, 1, 1, almostLinear, fade
+    animation = workspacesOut, 1, 1, almostLinear, fade
+}
+
+# Ref https://wiki.hyprland.org/Configuring/Workspace-Rules/
+# "Smart gaps" / "No gaps when only"
+# uncomment all if you wish to use that.
+# workspace = w[tv1], gapsout:0, gapsin:0
+# workspace = f[1], gapsout:0, gapsin:0
+# windowrule = bordersize 0, floating:0, onworkspace:w[tv1]
+# windowrule = rounding 0, floating:0, onworkspace:w[tv1]
+# windowrule = bordersize 0, floating:0, onworkspace:f[1]
+# windowrule = rounding 0, floating:0, onworkspace:f[1]
+
+# See https://wiki.hyprland.org/Configuring/Dwindle-Layout/ for more
+dwindle {
+    pseudotile = true # Master switch for pseudotiling. Enabling is bound to mainMod + P in the keybinds section below
+    preserve_split = true # You probably want this
+}
+
+# See https://wiki.hyprland.org/Configuring/Master-Layout/ for more
+master {
+    new_status = master
+}
+
+#xwayland {
+#    use_nearest_neighbor = false
+#    force_zero_scaling = true
+#}
+
+# https://wiki.hyprland.org/Configuring/Variables/#misc
+misc {
+    force_default_wallpaper = -1 # Set to 0 or 1 to disable the anime mascot wallpapers
+    disable_hyprland_logo = false # If true disables the random hyprland logo / anime girl background. :(
+    enable_anr_dialog = false
+}
+
+
+#############
+### INPUT ###
+#############
+
+# https://wiki.hyprland.org/Configuring/Variables/#input
+input {
+    kb_layout = us
+    kb_variant =
+    kb_model =
+    kb_options =
+    kb_rules =
+
+    follow_mouse = 1
+    # follow_mouse_threshold = 500
+
+    sensitivity = 0.0 # -1.0 - 1.0, 0 means no modification.
+    accel_profile = flat
+
+    touchpad {
+        natural_scroll = false
+    }
+}

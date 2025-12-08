@@ -1,0 +1,21 @@
+# See https://wiki.hyprland.org/Configuring/Keywords/
+#windowrulev2 = immediate, class:.*
+#windowrulev2 = stayfocused, class:^(steam)$
+#
+# https://github.com/Ulauncher/Ulauncher
+windowrulev2 = stayfocused, class:^((u|U)launcher)$
+windowrulev2 = noborder, class:^((u|U)launcher)$
+
+windowrulev2 = float, title:^(Picture in picture)$
+windowrulev2 = pin, title:^(Picture in picture)$
+
+# Games to allow tearing
+windowrulev2 = immediate, class:^(cs2)$
+windowrulev2 = fullscreen, class:^(cs2)$
+
+windowrulev2=move 0 0,class:(flameshot),title:(flameshot)
+windowrulev2=pin,class:(flameshot),title:(flameshot)
+windowrulev2=fullscreenstate,class:(flameshot),title:(flameshot)
+windowrulev2=float,class:(flameshot),title:(flameshot)
+
+windowrulev2=noinitialfocus, class:(jetbrains-)(.*), title:win.*, initialTitle:win.*, floating:1

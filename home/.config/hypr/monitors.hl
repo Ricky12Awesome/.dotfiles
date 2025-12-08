@@ -1,0 +1,68 @@
+################
+### MONITORS ###
+################
+
+# See https://wiki.hyprland.org/Configuring/Monitors/
+#monitor=,highrr,auto,1.5
+
+# CM:
+# auto    - srgb for 8bpc, wide for 10bpc if supported (recommended)
+# srgb    - sRGB primaries (default)
+# dcip3   - DCI P3 primaries
+# dp3     - Apple P3 primaries
+# adobe   - Adobe RGB primaries
+# wide    - wide color gamut, BT2020 primaries
+# edid    - primaries from edid (known to be inaccurate)
+# hdr     - wide color gamut and HDR PQ transfer function (experimental)
+# hdredid - same as hdr with edid primaries (experimental)
+
+monitorv2 {
+    output = DP-1
+    mode = 2560x1440@240
+    position = 2560x0
+    scale = 1
+    vrr = 0
+    # bitdepth = 10
+    # cm = hdr
+    sdrbrightness = 1.0
+    sdrsaturation = 1.1
+    supports_wide_color = 1
+    supports_hdr = 1
+    sdr_min_luminance = 0.0
+    sdr_max_luminance = 200
+    min_luminance = 0.0
+    max_luminance = 1000
+    max_avg_luminance = 400
+}
+
+monitorv2 {
+    output = DP-2
+    mode = 2560x1440@170
+    position = 0x0
+    scale = 1
+    vrr = 0
+    # bitdepth = 10
+    # cm = hdr
+    # sdrbrightness = 1.0
+    # sdrsaturation = 1.0
+    # supports_wide_color = 1
+    # supports_hdr = 1
+}
+
+#monitor=DP-1, 2560x1440@240, 2560x0, 1, vrr, 0, bitdepth, 10, cm, hdredid, sdrbrightness, 1.0, sdrsaturation, 1.0
+# monitor=DP-1, 2560x1440@240, 2560x0, 1, vrr, 0
+# monitor=DP-2, 2560x1440@170, 0x0, 1, vrr, 0
+
+$primary = DP-1 # right "front" monitor
+$secondary = DP-2 # left monitor
+
+workspace = 1, monitor:$primary,persistent:true,default:true
+workspace = 2, monitor:$primary,persistent:true,default:true
+workspace = 3, monitor:$primary,persistent:true,default:true
+workspace = 4, monitor:$primary,persistent:true,default:true
+workspace = 5, monitor:$primary,persistent:true,default:true
+workspace = 6, monitor:$primary,persistent:true,default:true
+workspace = 7, monitor:$primary,persistent:true,default:true
+workspace = 8, monitor:$primary,persistent:true,default:true
+workspace = 9, monitor:$secondary,persistent:true,default:true
+workspace = 10, monitor:$secondary,persistent:true,default:true

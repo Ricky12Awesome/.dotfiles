@@ -1,0 +1,65 @@
+#################
+### AUTOSTART ###
+#################
+
+# https://wiki.hyprland.org/FAQ/#some-of-my-apps-take-a-really-long-time-to-open
+exec-once = dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
+
+# Fix for tray icons not working after some time
+exec-once = systemctl --user mask --now --runtime plasma-ksmserver.service plasma-kded6.service && killall kded6
+
+# KWallet
+exec-once = /usr/lib/pam_kwallet_init
+
+# for blackscreen screen saver
+exec-once = hypridle
+
+# GPU Screen Recorder
+#exec-once = gsr-ui launch-daemon
+
+# Media Controls
+exec = pkill playerctld; playerctld daemon
+
+# Waybar
+# exec = pkill waybar;
+
+exec = hyprpanel -q; hyprpanel
+
+# Notifiactions
+exec = pkill swaync; swaync
+
+# Polkit
+exec-once = systemctl --user start plasma-polkit-agent.service --now
+
+# OpenTabletDriver (for some reason it doesn't autostart when enabled)
+# https://github.com/OpenTabletDriver/OpenTabletDriver/discussions/1392
+exec-once = systemctl --user start opentabletdriver.service --now
+
+exec-once = dolphin --daemon
+
+# Ulauncher Daemon
+exec-once = ulauncher --hide-window --no-window-shadow
+
+# Wallpaper
+# exec-once = hyprpaper
+# 2438516110
+# 2394949914
+# 2142009113
+# 1585254290
+# 3344347988
+# 3103541488
+#
+# 3344347988 causes high GPU randomly
+# exec-once = linux-wallpaperengine --screen-root DP-1 --bg 3103541488 --screen-root DP-2 --bg 3344347988 --no-fullscreen-pause --no-audio-processing --noautomute
+# High VRAM usuage idky, its just a video its way less using mpv on its own
+# mpv ~/.steam/steam/steamapps/workshop/content/431960/3103541488/无边框2K.mp4 --loop
+# exec-once = linux-wallpaperengine --screen-root DP-1 --screen-root DP-2 --bg 3103541488 --no-fullscreen-pause --no-audio-processing --noautomute
+
+# This is more efficient when the wallpaper is just a video file
+# exec-once = killall mpvppaper; mpvpaper ALL ~/.steam/steam/steamapps/workshop/content/431960/3103541488/无边框2K.mp4 -o "--mute --loop"
+
+# restarts every hour since mpv has a memory leak when looping videos
+exec-once = while true; do killall mpvpaper; mpvpaper ALL ~/.steam/steam/steamapps/workshop/content/431960/3103541488/无边框2K.mp4 -o "--mute --loop" -f; sleep 3600; done
+
+# XDPH since for some reason it doesn't auto start
+# exec-once = ./start-xdph.sh

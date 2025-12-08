@@ -467,5 +467,7 @@
   "theme.bar.buttons.y_margins": "0.0em",
   "theme.bar.outer_spacing": "0.0em",
   "theme.bar.location": "top",
-  "theme.bar.layer": "bottom"
+  "theme.bar.layer": "bottom",
+  "bar.customModules.ram.labelType": "used/total",
+  "theme.bar.buttons.systray.enableBorder": false
 }

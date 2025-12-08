@@ -8,23 +8,29 @@
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
   "prettier": {
-    "allowed": false
+    "allowed": true
   },
   "terminal": {
     "dock": "right"
   },
   "file_types": {
-    "ini": ["*.desktop"]
+    "ini": ["*.desktop"],
+    "Hyprland Config": ["*.hl", "hyprland.conf", "hyprlandd.conf"],
   },
   "formatter": [
-    {
-      "external": {
-        "command": "/home/ricky/.bun/bin/prettier",
-        "arguments": ["--stdin-filepath", "{buffer_path}"]
-      }
-    }
+    // {
+    // "external": {
+    // "command": "/home/ricky/.bun/bin/prettier",
+    // "arguments": ["--stdin-filepath", "{buffer_path}"]
+    // }
+    // }
   ],
   "lsp": {
+    "hyprland": {
+      "binary": {
+        "path": "/home/ricky/go/bin/hyprls"
+      }
+    },
     "rust-analyzer": {
       "initialization_options": {
         "cargo": {
@@ -34,6 +40,9 @@
     }
   },
   "languages": {
+    "Hyprland Config": {
+      "language_servers": ["!codebook", "..."]
+    },
     "Shell Script": {
       "format_on_save": "on",
       "formatter": {
