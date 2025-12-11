@@ -15,7 +15,7 @@
   },
   "file_types": {
     "ini": ["*.desktop"],
-    "Hyprland Config": ["*.hl", "hyprland.conf", "hyprlandd.conf"],
+    "Hyprland Config": ["*.hl", "hyprland.conf", "hyprlandd.conf"]
   },
   "formatter": [
     // {
@@ -39,7 +39,11 @@
       }
     }
   },
+
   "languages": {
+    "Hyprlang": {
+      "language_servers": ["!codebook", "..."]
+    },
     "Hyprland Config": {
       "language_servers": ["!codebook", "..."]
     },
@@ -47,9 +51,15 @@
       "format_on_save": "on",
       "formatter": {
         "external": {
-          "command": "shfmt",
+          // "command": "shfmt",
+          "command": "sh",
           // Change `--indent 2` to match your preferred tab_size
-          "arguments": ["--filename", "{buffer_path}", "--indent", "2"]
+          // "arguments": ["--filename", "{buffer_path}", "--indent", "2"]
+          // "arguments": ["-c", "shfmt --filename {buffer_path} --indent 2"]
+          "arguments": [
+            "-c",
+            "case \"{buffer_path}\" in *.zsh|*.zshrc|*.zprofile|*.zlogin|*.zshenv) cat \"{buffer_path}\" ;; *) shfmt --filename \"{buffer_path}\" --indent 2 ;; esac"
+          ]
         }
       }
     },

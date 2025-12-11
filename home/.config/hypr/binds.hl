@@ -5,6 +5,14 @@
 # See https://wiki.hyprland.org/Configuring/Keywords/ for more
 $mainMod = SUPER
 
+# Media Keys
+binde =, XF86AudioRaiseVolume, exec, wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 5%+
+binde =, XF86AudioLowerVolume, exec, wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 5%-
+bindl =, XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
+binde =, XF86AudioPlay, exec, playerctl play-pause
+binde =, XF86AudioNext, exec, playerctl next
+binde =, XF86AudioPrev, exec, playerctl previous
+
 # Example binds, see https://wiki.hyprland.org/Configuring/Binds/ for more
 bind = $mainMod, RETURN, exec, $terminal
 bind = $mainMod, Q, killactive,
@@ -62,17 +70,12 @@ bindm = $mainMod, mouse:273, resizewindow
 bind = SHIFT, PRINT, exec, $HOME/.config/hypr/scripts/take_screenshot.sh
 bind = ,PRINT, exec, hyprshot -z -m active -m window -o ~/Pictures/Screenshots/
 #bind = $mainMod, B, exec, pkill waybar; waybar
-bind = $mainMod, B, exec, hyprpanel -q; hyprpanel
+
+# bind = $mainMod, B, exec, pgrep -x hyprpanel-app >/dev/null && hyprpanel -q || hyprpanel
+bind = $mainMod, B, exec, hyprpanel t bar-0 && hyprpanel t bar-1
+bind = $mainMod SHIFT, B, exec, hyprpanel -q && hyprpanel
 
 # Global binds for apps
 bind = $mainMod, Print, pass, class:^(com\.obsproject\.Studio)$
 
 bind = , Home, global, :wf_fissure_price_activate
-
-# Media Keys
-binde =, XF86AudioRaiseVolume, exec, wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 5%+
-binde =, XF86AudioLowerVolume, exec, wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 5%-
-bindl =, XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
-binde =, XF86AudioPlay, exec, playerctl play-pause
-binde =, XF86AudioNext, exec, playerctl next
-binde =, XF86AudioPrev, exec, playerctl previous
